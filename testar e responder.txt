@@ -1,0 +1,36 @@
+pergunta:
+minha assinatura ta cancelada, como exporto os dados?
+limiares+resps: 
+Score: 0.7722 | search_document: Pergunta: Como cancelo minha assinatura?
+Score: 0.6903 | search_document: Pergunta: Como exporto meus dados?
+Score: 0.6211 | search_document: Pergunta: O sistema está fora do ar. Como confirmo?
+Score: 0.5874 | search_document: Pergunta: Consigo importar dados de outra ferramenta?
+
+Para perguntas 3 e 5:
+
+3)
+1
+2
+
+total duration:       6.3984612s
+load duration:        10.5475ms
+prompt eval count:    255 token(s)
+prompt eval cached:   101 token(s)
+prompt eval duration: 5.918316s
+prompt eval rate:     26.02 tokens/s
+eval count:           4 token(s)
+eval duration:        397.759ms
+eval rate:            10.06 tokens/s
+
+5)
+2
+
+total duration:       298.1522ms
+load duration:        10.2363ms
+prompt eval count:    253 token(s)
+prompt eval cached:   252 token(s)
+prompt eval duration: 146.2ms
+prompt eval rate:     6.84 tokens/s
+eval count:           2 token(s)
+eval duration:        134.356ms
+eval rate:            14.89 tokens/s
