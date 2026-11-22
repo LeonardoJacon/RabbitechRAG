@@ -31,12 +31,12 @@ Os dois scripts calculam a similaridade (cosseno) entre **uma mensagem** e as 18
 
 | Arquivo | O que faz | Como as entradas são embutidas | Saída |
 |---|---|---|---|
-| `src/Tentaiv_1.py` | **Configuração final.** Compara a mensagem com as entradas e classifica o resultado contra o limiar fixo de 0,7. | Texto da pergunta seguido do texto da resposta (sem rótulos), com o prefixo `search_document: `. A consulta usa o prefixo `search_query:` (sem espaço depois dos dois pontos). | Um rótulo (`Responde`, `Não Responde`, `Falso positivo` ou `Falso negativo`) e as duas melhores entradas com a nota em quatro casas. |
-| `src/Teste_1.py` | **Variante de teste: só a pergunta.** Mostra como as notas mudam quando a resposta não entra no texto embutido. Foi usada para comparar com a configuração final na mensagem 5. | Só `Pergunta: <texto da pergunta>`, com o prefixo `search_document: `. A consulta usa `search_query: ` seguido de um caractere de tabulação. | As 18 notas em ordem decrescente, sem limiar nem rótulo. |
+| `src/Tentaiv.py` | **Configuração final.** Compara a mensagem com as entradas e classifica o resultado contra o limiar fixo de 0,7. | Texto da pergunta seguido do texto da resposta (sem rótulos), com o prefixo `search_document: `. A consulta usa o prefixo `search_query:` (sem espaço depois dos dois pontos). | Um rótulo (`Responde`, `Não Responde`, `Falso positivo` ou `Falso negativo`) e as duas melhores entradas com a nota em quatro casas. |
+| `src/Teste.py` | **Variante de teste: só a pergunta.** Mostra como as notas mudam quando a resposta não entra no texto embutido. Foi usada para comparar com a configuração final na mensagem 5. | Só `Pergunta: <texto da pergunta>`, com o prefixo `search_document: `. A consulta usa `search_query: ` seguido de um caractere de tabulação. | As 18 notas em ordem decrescente, sem limiar nem rótulo. |
 
 Detalhes de uso:
 
-- **`Tentaiv_1.py`:** a variável `resp` diz o que era esperado para a mensagem. Com `resp = "responde"`, o script imprime `Responde` ou `Falso negativo`. Com qualquer outro valor (o padrão no arquivo é `"respond"`), imprime `Não Responde` ou `Falso positivo`. O bloco entre aspas triplas, se for descomentado, imprime as 18 notas.
+- **`Tentaiv.py`:** a variável `resp` diz o que era esperado para a mensagem. Com `resp = "responde"`, o script imprime `Responde` ou `Falso negativo`. Com qualquer outro valor (o padrão no arquivo é `"respond"`), imprime `Não Responde` ou `Falso positivo`. O bloco entre aspas triplas, se for descomentado, imprime as 18 notas.
 - **Mensagem de cada arquivo:** nos arquivos enviados, `query` está com a mensagem 6 ("como fazer requisições na api?").
 - **As notas dos dois scripts não são comparáveis entre si** sem levar em conta a diferença de formato do texto embutido. O caractere de tabulação em `Teste_1.py` e o espaço depois do prefixo da consulta também diferem entre os arquivos.
 - **O selecionador (llama3.1:8b) não tem script:** foi testado à mão no terminal, com `ollama run llama3.1:8b --verbose`. Os prompts e as saídas estão em `tests/`.
@@ -80,10 +80,10 @@ No protótipo, a saída do selecionador é binária: os casos de cobertura parci
 ```
 README.md                          este arquivo
 docs/                              documento do desafio (PDF) e anexo_detalhado.md
-src/Tentaiv_1.py                   configuração final (pergunta + resposta)
-src/Teste_1.py                     variante só com a pergunta
-tests/notas_1.txt                  notas das 16 mensagens e de "bom dia" (Tentaiv_1.py)
-tests/testar_e_responder_1.txt     notas da mensagem 5 só com a pergunta (Teste_1.py)
+src/Tentaiv.py                   configuração final (pergunta + resposta)
+src/Teste.py                     variante só com a pergunta
+tests/notas.txt                  notas das 16 mensagens e de "bom dia" (Tentaiv_1.py)
+tests/testar_e_responder.txt     notas da mensagem 5 só com a pergunta (Teste_1.py)
                                    e saídas do selecionador para as mensagens 3 e 5
 tests/                             prompts e saídas do selecionador nas demais mensagens
 ```
