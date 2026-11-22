@@ -1,6 +1,6 @@
 # Assistente de triagem de suporte técnico com Ollama e RAG
 
-Teste técnico da RabbITech. Autor: Leonardo. Base: faq_interno.md (18 entradas). Repositório: README.md (fluxograma), docs/anexo_detalhado.md (resultados completos), src/ (Tentaiv_1.py e Teste_1.py) e tests/.
+Teste técnico da RabbITech. Autor: Leonardo. Base: faq_interno.md (18 entradas). Repositório: README.md (fluxograma), docs/anexo_detalhado.md (resultados completos), src/ (Tentaiv.py e Teste.py) e tests/.
 
 ## 1. Contexto e restrições
 
