@@ -38,7 +38,7 @@ Detalhes de uso:
 
 - **`Tentaiv.py`:** a variável `resp` diz o que era esperado para a mensagem. Com `resp = "responde"`, o script imprime `Responde` ou `Falso negativo`. Com qualquer outro valor (o padrão no arquivo é `"respond"`), imprime `Não Responde` ou `Falso positivo`. O bloco entre aspas triplas, se for descomentado, imprime as 18 notas.
 - **Mensagem de cada arquivo:** nos arquivos enviados, `query` está com a mensagem 6 ("como fazer requisições na api?").
-- **As notas dos dois scripts não são comparáveis entre si** sem levar em conta a diferença de formato do texto embutido. O caractere de tabulação em `Teste_1.py` e o espaço depois do prefixo da consulta também diferem entre os arquivos.
+- **As notas dos dois scripts não são comparáveis entre si** sem levar em conta a diferença de formato do texto embutido. O caractere de tabulação em `Teste.py` e o espaço depois do prefixo da consulta também diferem entre os arquivos.
 - **O selecionador (llama3.1:8b) não tem script:** foi testado à mão no terminal, com `ollama run llama3.1:8b --verbose`. Os prompts e as saídas estão em `tests/`.
 
 ## Como reproduzir
@@ -47,7 +47,7 @@ Detalhes de uso:
 ollama pull nomic-embed-text
 ollama pull llama3.1:8b
 pip install numpy ollama
-python src/Tentaiv_1.py
+python src/Tentaiv.py
 ```
 
 O Ollama precisa estar em execução. Para o selecionador, use `ollama run llama3.1:8b --verbose` e cole o prompt com os dois trechos numerados.
@@ -82,8 +82,8 @@ README.md                          este arquivo
 docs/                              documento do desafio (PDF) e anexo_detalhado.md
 src/Tentaiv.py                   configuração final (pergunta + resposta)
 src/Teste.py                     variante só com a pergunta
-tests/notas.txt                  notas das 16 mensagens e de "bom dia" (Tentaiv_1.py)
-tests/testar_e_responder.txt     notas da mensagem 5 só com a pergunta (Teste_1.py)
+tests/notas.txt                  notas das 16 mensagens e de "bom dia" (Tentaiv.py)
+tests/testar_e_responder.txt     notas da mensagem 5 só com a pergunta (Teste.py)
                                    e saídas do selecionador para as mensagens 3 e 5
 tests/                             prompts e saídas do selecionador nas demais mensagens
 ```
